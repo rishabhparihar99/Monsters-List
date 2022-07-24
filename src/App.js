@@ -28,7 +28,11 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.monsters.map((element) => {
-          return <h1 key={element.key}>{element.name}</h1>;
+          return (
+            <div key={element.key}>
+              <h1>{element.name}</h1>
+            </div>
+          );
         })}
       </div>
     );
