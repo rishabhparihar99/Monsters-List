@@ -7,21 +7,14 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: [
-        {
-          name: "Linda",
-          key: "1233445ee",
-        },
-        {
-          name: "Roha",
-          key: "5d6w7tgd9",
-        },
-        {
-          name: "Rhino",
-          key: "vgds6737d63",
-        },
-      ],
+      monsters: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users").then(
+      (response) => console.log(response) //fetch promise //see console after run
+    );
   }
 
   render() {
