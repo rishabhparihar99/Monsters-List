@@ -34,14 +34,20 @@ class App extends Component {
           type="search"
           placeholder="search-monsters"
           onChange={(eventName) => {
+            console.log({ startingArray: this.state.monsters }); // Starting Array
             console.log(eventName.target.value);
             const stringName = eventName.target.value.toLocaleLowerCase();
             const filterArr = this.state.monsters.filter((newName) => {
               return newName.name.toLocaleLowerCase().includes(stringName);
             });
-            this.setState(() => {
-              return { monsters: filterArr };
-            });
+            this.setState(
+              () => {
+                return { monsters: filterArr };
+              },
+              () => {
+                console.log({ endArray: this.state.monsters }); //EndArray
+              }
+            );
           }}
         />
         {this.state.monsters.map((element) => {
