@@ -31,13 +31,14 @@ class App extends Component {
   };
 
   render() {
+    //console.log("Inside appjs");
     const { monsters, searchFeild } = this.state;
     const { onSearchChange } = this;
 
     const filterMonsters = monsters.filter((newName) => {
       return newName.name.toLocaleLowerCase().includes(searchFeild);
     });
-    console.log({ monsters: filterMonsters }); //verification for CardList Props
+    // console.log({ monsters: filterMonsters }); //verification for CardList Props
     return (
       <div className="App">
         <input
