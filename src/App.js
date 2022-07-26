@@ -32,37 +32,21 @@ class App extends Component {
   };
 
   render() {
-    //console.log("Inside appjs");
     const { monsters, searchFeild } = this.state;
     const { onSearchChange } = this;
 
     const filterMonsters = monsters.filter((newName) => {
       return newName.name.toLocaleLowerCase().includes(searchFeild);
     });
-    // console.log({ monsters: filterMonsters }); //verification for CardList Props
+
     return (
       <div className="App">
-        {/*} <input
-          className="search-box"
-          type="search"
-          placeholder="search-monsters"
-          onChange={onSearchChange}
-        /> *}
-        {/*     {filterMonsters.map((element) => {
-          return (
-            <div key={element.id}>
-              <h1>{element.name}</h1>
-            </div>
-          );
-        })}    */}
         <SearchBox
           onChangeHandler={onSearchChange}
           placeholder="search-monsters"
           className="search-box"
         />
         <CardList newMonList={filterMonsters} />
-
-        {/* See console */}
       </div>
     );
   }
