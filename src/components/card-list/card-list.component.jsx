@@ -3,12 +3,15 @@ import { Component } from "react";
 class CardList extends Component{
    render()
    {
-    console.log(this.props);
+    console.log('render'); // Why it is rendering 2 times?
+    const {monsters} = this.props;
     return(
         <div>
-            <p>Hello, I am the Card List</p>
+            {monsters.map((monster)=>{
+                 return <h1 key={monster.id}>{monster.name}</h1>
+            })}
         </div>
-    )
+    );
    }
 }
-export default CardList
+export default CardList;
