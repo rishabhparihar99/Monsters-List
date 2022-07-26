@@ -3,11 +3,11 @@ import { Component } from "react";
 class CardList extends Component{
    render()
    {
-    console.log('render'); // Why it is rendering 2 times?
-    const {monsters} = this.props;
+   // console.log(this.props.monsters); // Why it is rendering 2 times?
+    const {newMonList} = this.props;
     return(
         <div>
-            {monsters.map((monster)=>{
+            {newMonList.map((monster)=>{
                  return <h1 key={monster.id}>{monster.name}</h1>
             })}
         </div>

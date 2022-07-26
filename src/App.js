@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
 import { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
@@ -37,7 +37,7 @@ class App extends Component {
     const filterMonsters = monsters.filter((newName) => {
       return newName.name.toLocaleLowerCase().includes(searchFeild);
     });
-
+    console.log({ monsters: filterMonsters }); //verification for CardList Props
     return (
       <div className="App">
         <input
@@ -53,7 +53,7 @@ class App extends Component {
             </div>
           );
         })}    */}
-        <CardList monsters={filterMonsters} />
+        <CardList newMonList={filterMonsters} />
         {/* See console */}
       </div>
     );
